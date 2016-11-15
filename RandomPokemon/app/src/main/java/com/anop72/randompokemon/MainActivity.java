@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
 
+    RandomPokemonId randomPokemonId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +29,14 @@ public class MainActivity extends AppCompatActivity {
 
         gateway = ServerAPI.createRetrofitService(PokemonGateway.class);
 
+        randomPokemonId = new RandomPokemonId();
+
     }
 
     public void random(View v) {
-        Random r = new Random();
-        int randomId = r.nextInt(100) + 1;
-        getPokemon(randomId);
+
+        getPokemon(randomPokemonId.random());
+
     }
 
     private void getPokemon(int pokemonId) {
