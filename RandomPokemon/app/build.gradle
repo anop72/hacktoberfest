@@ -34,6 +34,8 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+
+        test.java.srcDirs += 'src/test/kotlin'
     }
 }
 
@@ -56,4 +58,7 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    testCompile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
 }
